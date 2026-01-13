@@ -4,7 +4,7 @@
 
 MoodleMate is a local RAG (Retrieval-Augmented Generation) chatbot designed to help students navigate complex course materials. By simulating the **UIR Connect** interface, it provides a familiar, professional environment where students can ask questions and get instant, cited answers from their course PDFs.
 
-![UIR Theme](https://via.placeholder.com/800x400?text=MoodleMate+Interface+Preview)
+
 
 ---
 
@@ -124,3 +124,4 @@ c:\AI Project\
 ## 📝 License
 This project is an **MVP** created for educational purposes.
 *University International of Rabat branding is used for simulation purposes only.*
+
