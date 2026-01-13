@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodleMate - UIR Connect</title>
+    <link rel="icon" type="image/png" href="/static/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="/static/style.css?v=5">
+</head>
+
+<body>
+
+    <!-- Top Bar (Socials & Utils) -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="social-icons">
+                <span class="material-symbols-outlined">facebook</span>
+                <span class="material-symbols-outlined">photo_camera</span> <!-- Instagram -->
+                <span class="material-symbols-outlined">history_edu</span> <!-- Twitter/X generic -->
+                <span class="material-symbols-outlined">work</span> <!-- LinkedIn -->
+                <span class="material-symbols-outlined">play_circle</span> <!-- YouTube -->
+            </div>
+            <div class="utils">
+                <span class="util-item"><span class="material-symbols-outlined">language</span> EN</span>
+                <span class="util-item"><span class="material-symbols-outlined">search</span></span>
+                <span class="util-item"><span class="material-symbols-outlined">person</span> Login</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header (Logo & Nav) -->
+    <div class="main-header">
+        <div class="container header-content">
+            <div class="logo-area">
+                <img src="/static/logo.png" alt="UIR Logo" class="uir-logo">
+                <div class="logo-text">
+                    <h1>Université Internationale de Rabat</h1>
+                    <p>THE INNOVATIVE UNIVERSITY</p>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <a href="#" class="nav-link active">Home</a>
+                <a href="#" class="nav-link">Dashboard</a>
+                <a href="#" class="nav-link">Collèges</a>
+                <a href="#" class="nav-link">Support</a>
+                <span class="material-symbols-outlined menu-toggle" onclick="toggleSidebar()">menu</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero / Title Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h2>MoodleMate Learning Companion</h2>
+            <p>Your AI-powered assistant for university resources.</p>
+        </div>
+    </section>
+
+    <!-- Main Content Grid -->
+    <div class="container main-grid">
+
+        <!-- Sidebar (Courses / History) -->
+        <aside class="dashboard-sidebar" id="sidebar">
+            <div class="sidebar-block">
+                <h3><span class="material-symbols-outlined">school</span> My Courses</h3>
+                <div class="course-list">
+                    <div class="course-item">
+                        <span class="course-code">TP-A</span>
+                        <span class="course-name">Artificial Intelligence</span>
+                    </div>
+                    <div class="course-item">
+                        <span class="course-code">ING2026</span>
+                        <span class="course-name">Cybersecurity</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-block">
+                <h3><span class="material-symbols-outlined">history</span> Chat History</h3>
+                <div class="history-list" id="history-list">
+                    <!-- Chat sessions loaded here -->
+                    <div class="loading-spinner"></div>
+                </div>
+                <div class="sidebar-actions">
+                    <button class="new-chat-btn" onclick="window.location.reload()">
+                        <span class="material-symbols-outlined">add</span> New Chat
+                    </button>
+                    <button class="clear-history-btn" onclick="clearHistory()">
+                        <span class="material-symbols-outlined">delete</span> Clear History
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-interface">
+            <div class="chat-header">
+                <div class="welcome-banner" id="welcome-screen">
+                    <img src="/static/logo.png" alt="Bot" class="bot-avatar-large">
+                    <h3>Hello! How can I help you today?</h3>
+                </div>
+            </div>
+
+            <div class="chat-messages" id="chat-messages">
+                <!-- Messages will appear here -->
+            </div>
+
+            <div class="input-area">
+                <div class="input-wrapper">
+                    <input type="text" id="user-input" placeholder="Ask MoodleMate something..." autocomplete="off">
+                    <button id="send-btn" onclick="sendMessage()">
+                        <span class="material-symbols-outlined">send</span>
+                    </button>
+                </div>
+                <div class="input-footer">
+                    MoodleMate can make mistakes. Please check important information.
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <img src="/static/logo.png" alt="Logo" style="height: 40px; filter: brightness(0) invert(1);">
+                    <h4>Université Internationale de Rabat</h4>
+                </div>
+                <p>Technopolis Rabat-Salé</p>
+                <p>Rocade de Rabat-Salé</p>
+                <p>11100 - Sala Al Jadida</p>
+                <p>contact@uir.ac.ma</p>
+                <p>(+212) 5 30 10 30 00</p>
+            </div>
+            <div class="footer-col">
+                <h4>Institutional</h4>
+                <ul>
+                    <li>About Us</li>
+                    <li>Our Engagements</li>
+                    <li>Partners</li>
+                    <li>Careers</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Collèges</h4>
+                <ul>
+                    <li>Engineering & Arch</li>
+                    <li>Rabat Business School</li>
+                    <li>Political Science</li>
+                    <li>Health Sciences</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <span class="material-symbols-outlined">facebook</span>
+                    <span class="material-symbols-outlined">photo_camera</span>
+                    <span class="material-symbols-outlined">work</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Université Internationale de Rabat. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/static/script.js?v=5"></script>
+</body>
+
+</html>
